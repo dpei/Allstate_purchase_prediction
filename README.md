@@ -20,7 +20,7 @@ From the perspective of insurance company, this challenge aims to predict what c
 [Two datasets](http://www.kaggle.com/c/allstate-purchase-prediction-challenge/data) were provided: train.csv and test.csv 
 
 Each row represents one quote. One customer could have multiple quotes. To distinguish quotes within one customer. the variable shopping_point was used, Their demographic information and their coverage option were recorded in each row. Each column contains one demographic information or coverage option.
-(pics/allstate-viz-1.png)
+<br />![Comparing Number of Shopping Points in Training vs Test Sets](pics/allstate-viz-1.png)
 
 By analyzing the distribution of last shopping point number, we could know how much quotes people took before they buy. 
 it is shown that the of shopping point 
