@@ -46,9 +46,9 @@ test.model <- preprocess(test, test.twonthree.shoppt.indice, FALSE)
 
 
 # keep some objects in R
-rm(list= ls()[!(ls() %in% c('train','test',
-                            'modelFitGbm', 'modelFitSvm','modelFitRf',
-                            'train.model', 'test.model'
-                            ))])
+# rm(list= ls()[!(ls() %in% c('train','test',
+#                             'modelFitGbm', 'modelFitSvm','modelFitRf',
+#                             'train.model', 'test.model'
+#                             ))])
 # save result
 save.image("result.RData")

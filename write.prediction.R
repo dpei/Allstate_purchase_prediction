@@ -1,8 +1,8 @@
 # the code chunk is used to write result into csv file for upload
 # Generate testing result for those who only have two shopping point total 18943
-test.model$retG <- predict(modelFit, newdata = test.model)
-length(which(test.model$retG == test.model$G))
-dim(test.model)
+# test.model$retG <- predict(modelFit, newdata = test.model)
+# length(which(test.model$retG == test.model$G))
+# dim(test.model)
 
 # combine three models if applicable
 test.model$retG <- odd.model.pred(list(modelFitRf, modelFitGbm, modelFitSvm), test.model)

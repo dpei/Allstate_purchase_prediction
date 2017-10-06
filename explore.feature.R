@@ -9,7 +9,9 @@ aggregate(cbind(agt[,2:3]), by = list(agt$group), function(x){length(unique(x)) 
 # if not all values a re the same, then return false
 cbind(6 , 72 , 23:26, data=train)
 
-id.equal <- aggregate(train$state, by = list(train$customer_ID), function(x){length(unique(x)) == 1})
+id.equal <- aggregate(train$state, 
+                      by = list(train$customer_ID), 
+                      function(x){length(unique(x)) == 1})
 
 # the result feature matrix has 97009 rows represent each customer,
 # the result feature matrix has several columns represent features,
@@ -45,6 +47,14 @@ df$G[change.G] <- TRUE
 number.change.G <- aggregate(df$G, by = list(df$summary.individual), sum)$x
 number.nochange.G <- aggregate(!df$G, by = list(df$summary.individual), sum)$x
 chisq.test(as.table(rbind(number.change.G, number.nochange.G)))
+
+plot(0:(length(number.change.G)-1), 
+     number.change.G/(number.change.G+number.nochange.G),
+     xlab = "num.change",
+     ylab = "percentage of G changed",
+     ylim = c(0, 0.35),
+     main = "num.change effect on G change percentage")
+
 
 # determin how many feature changed in first two records (fast customer and slow customer)
 # below are all 97009 customer with first two records
